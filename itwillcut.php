@@ -1,4 +1,25 @@
 <?php
+/**
+ * Copyright (c) Since 2022 Fl-Toussaint and contributors
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/AFL-3.0
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to contact@atelier-legoff.fr so we can send you a copy immediately.
+ *
+ * @author    FL-Toussaint <contact@atelier-legoff.fr>
+ * @copyright Since 2022 FL-Toussaint and contributors
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
+ * International Registered Trademark & Property of FL-Toussaint
+ */
+
+
+declare(strict_types=1);
 
 if (!defined('_PS_VERSION_')) {
     exit;
@@ -6,34 +27,28 @@ if (!defined('_PS_VERSION_')) {
 
 class Itwillcut extends Module
 {
-    /** @var string Nom technique du module (dossier) */
-    public $name = 'itwillcut';
-
-    /** @var string */
-    public $version = '1.0.0';
-
-    /** @var string */
-    public $author = 'Fl-Toussaint';
-
-    /** @var bool */
-    public $bootstrap = true; // active Bootstrap BO pour HelperForm
-
     /** Clés de configuration (stockées via Configuration) */
-    public const CFG_ENABLED_FOOTER   = 'ITWILLCUT_ENABLED_FOOTER';
-    public const CFG_ENABLED_CHECKOUT = 'ITWILLCUT_ENABLED_CHECKOUT';
-    public const CFG_CMS_ID           = 'ITWILLCUT_CMS_ID';
-    public const CFG_TEXT_FOOTER      = 'ITWILLCUT_TEXT_FOOTER';
-    public const CFG_TEXT_CHECKOUT    = 'ITWILLCUT_TEXT_CHECKOUT';
-    public const CFG_AGE_LIMIT        = 'ITWILLCUT_AGE_LIMIT';
+    private const CFG_ENABLED_FOOTER   = 'ITWILLCUT_ENABLED_FOOTER';
+    private const CFG_ENABLED_CHECKOUT = 'ITWILLCUT_ENABLED_CHECKOUT';
+    private const CFG_CMS_ID           = 'ITWILLCUT_CMS_ID';
+    private const CFG_TEXT_FOOTER      = 'ITWILLCUT_TEXT_FOOTER';
+    private const CFG_TEXT_CHECKOUT    = 'ITWILLCUT_TEXT_CHECKOUT';
+    private const CFG_AGE_LIMIT        = 'ITWILLCUT_AGE_LIMIT';
 
     /**
      * Constructeur: métadonnées module
      */
     public function __construct()
     {
+        $this->name = 'itwillcut';
+        $this->tab = 'front_office_features';
+        $this->version = '1.0.0';
+        $this->author = 'FL-Toussaint';
+        $this->need_instance = 0;
+        $this->bootstrap = true; // BO moderne
+
         parent::__construct();
 
-        $this->tab = 'front_office_features';
         $this->displayName = $this->trans('ItWillCut – Knife age warning', [], 'Modules.Itwillcut.Admin');
         $this->description = $this->trans('Displays an age restriction notice (18+) in footer and at checkout summary.', [], 'Modules.Itwillcut.Admin');
 
@@ -60,7 +75,7 @@ class Itwillcut extends Module
         return parent::install()
             && $this->registerHook('displayFooter')              // Footer section. :contentReference[oaicite:5]{index=5}
             && $this->registerHook('displayCheckoutSummaryTop')  // Au-dessus du récapitulatif. :contentReference[oaicite:6]{index=6}
-            && $this->registerHook('actionFrontControllerSetMedia') // Chargement CSS/JS. :contentReference[oaicite:7]{index=7}
+            && $this->registerHook('displayHeader') // Chargement CSS/JS. :contentReference[oaicite:7]{index=7}
             && Configuration::updateValue(self::CFG_ENABLED_FOOTER, 1)
             && Configuration::updateValue(self::CFG_ENABLED_CHECKOUT, 1)
             && Configuration::updateValue(self::CFG_CMS_ID, 0) // Aucun lien au début
@@ -247,7 +262,7 @@ class Itwillcut extends Module
             'itwillcut_cms_url' => $this->getCmsLinkUrl(),
         ]);
 
-        return $this->fetch('module:'.$this->name.'/views/templates/hook/footer_banner.tpl');
+        return $this->fetch('module:'.$this->name.'/views/templates/front/footer_banner.tpl');
     }
 
     /**
@@ -266,29 +281,18 @@ class Itwillcut extends Module
             'itwillcut_cms_url' => $this->getCmsLinkUrl(),
         ]);
 
-        return $this->fetch('module:'.$this->name.'/views/templates/hook/checkout_notice.tpl');
+        return $this->fetch('module:'.$this->name.'/views/templates/front/checkout_notice.tpl');
     }
 
     /**
-     * Enregistre CSS/JS front (vanilla) via le hook recommandé.
+     * Enregistre CSS/JS front (vanilla).
      * - On garde ça léger: une seule feuille de style et un JS “no-op” pour évolutivité.
      * @return void
      */
-    public function hookActionFrontControllerSetMedia()
+    public function hookDisplayHeader()
     {
-        // CSS global (footer + checkout)
-        $this->context->controller->registerStylesheet(
-            'module-'.$this->name.'-front',
-            'modules/'.$this->name.'/views/css/front/itwillcut.css',
-            ['media' => 'all', 'priority' => 150]
-        );
-
-        // JS (léger, prêt pour évolutions si besoin)
-        $this->context->controller->registerJavascript(
-            'module-'.$this->name.'-front',
-            'modules/'.$this->name.'/views/js/front/itwillcut.js',
-            ['position' => 'bottom', 'priority' => 150]
-        );
+        $this->context->controller->addJS('modules/' . $this->name . '/views/js/itwillcut.js');
+        $this->context->controller->addCSS('modules/' . $this->name . '/views/css/itwillcut.css');
     }
 
     /**
