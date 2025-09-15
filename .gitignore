@@ -1,0 +1,70 @@
+# Dépendances
+/vendor/
+/node_modules/
+
+# Fichiers de cache et temporaires
+/cache/
+/logs/
+/tmp/
+*.log
+*.cache
+
+# Tests
+/tests/tmp/
+/tests/coverage-html/
+/tests/results.xml
+/tests/.phpunit.result.cache
+/tests/coverage.txt
+
+# Uploads utilisateur
+/views/img/uploads/
+/uploads/
+*.uploaded
+
+# Configuration locale
+.env
+.env.local
+config/local.php
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Composer
+composer.lock
+
+# PHPUnit
+phpunit.xml.dist
+
+# Logs PHP
+error_log
+php_errors.log
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*.orig
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Documentation générée
+/docs/build/
+
+# Fichiers de build
+/build/tmp/
+/dist/
+
+# IA
+/.github/
+copilot-instructions.md

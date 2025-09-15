@@ -1,0 +1,4 @@
+_dev export-ignore
+tests export-ignore
+phpunit.xml* export-ignore
+phpstan* export-ignore
