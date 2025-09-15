@@ -86,6 +86,36 @@
         <source>Settings updated</source>
         <target>Paramètres mis à jour</target>
       </trans-unit>
+
+      <trans-unit id="admin.update_cms_disclaimer" resname="Update CMS disclaimer page">
+        <source>Update CMS disclaimer page</source>
+        <target>Mettre à jour la page CMS d'avertissement</target>
+      </trans-unit>
+
+      <trans-unit id="admin.cms_updated" resname="CMS disclaimer page updated successfully">
+        <source>CMS disclaimer page updated successfully</source>
+        <target>Page CMS d'avertissement mise à jour avec succès</target>
+      </trans-unit>
+
+      <trans-unit id="admin.cms_update_error" resname="Error updating CMS disclaimer page.">
+        <source>Error updating CMS disclaimer page.</source>
+        <target>Erreur lors de la mise à jour de la page CMS d'avertissement.</target>
+      </trans-unit>
+
+      <trans-unit id="admin.cms_not_found" resname="No CMS disclaimer page found.">
+        <source>No CMS disclaimer page found.</source>
+        <target>Aucune page CMS d'avertissement trouvée.</target>
+      </trans-unit>
+
+      <trans-unit id="admin.banner_settings" resname="Banner Settings">
+        <source>Banner Settings</source>
+        <target>Configuration des bannières</target>
+      </trans-unit>
+
+      <trans-unit id="admin.cms_disclaimer_page" resname="CMS Disclaimer Page">
+        <source>CMS Disclaimer Page</source>
+        <target>Page CMS d'avertissement</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

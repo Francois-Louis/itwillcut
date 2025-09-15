@@ -3,11 +3,11 @@
 *}
 {strip}
   <section class="itwillcut itwillcut--checkout" role="region"
-    aria-label="{l s='Legal age warning' d='Modules.Itwillcut.Shop'}">
+  aria-label="{$itwillcut_aria_label|escape:'html':'UTF-8'}">
     <div class="itwillcut__inner">
-      <span class="itwillcut__icon" aria-hidden="true">18+</span>
+      <img class="itwillcut__icon" src="modules/itwillcut/views/img/logo-couteaux-interdits-mineurs.png" alt="{$itwillcut_alt_logo|escape:'html':'UTF-8'}" width="32" height="32" aria-hidden="true" />
       <p class="itwillcut__text">
-        {l s=$itwillcut_text d='Modules.Itwillcut.Shop'}
+        {$itwillcut_text nofilter}
         {if $itwillcut_cms_url}
           <a class="itwillcut__link" href="{$itwillcut_cms_url|escape:'html':'UTF-8'}">
             {l s='Read the disclaimer' d='Modules.Itwillcut.Shop'}
