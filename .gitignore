@@ -1,6 +1,6 @@
 # Dépendances
-/vendor/
-/node_modules/
+vendor/
+node_modules/
 
 # Fichiers de cache et temporaires
 /cache/
