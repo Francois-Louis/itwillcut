@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="fr-FR" datatype="plaintext" original="shop">
+    <body>
+      <trans-unit id="admin.module_title" resname="ItWillCut – Knife age warning">
+        <source>ItWillCut – Knife age warning</source>
+        <target>ItWillCut – Avertissement d’âge (couteaux)</target>
+      </trans-unit>
+
+      <trans-unit id="admin.module_desc" resname="Displays an age restriction notice (18+) in footer and at checkout summary.">
+        <source>Displays an age restriction notice (18+) in footer and at checkout summary.</source>
+        <target>Affiche un avertissement d’âge (18+) dans le pied de page et au-dessus du récapitulatif de commande.</target>
+      </trans-unit>
+
+      <trans-unit id="admin.settings" resname="Settings">
+        <source>Settings</source>
+        <target>Paramètres</target>
+      </trans-unit>
+
+      <trans-unit id="admin.enabled" resname="Enabled">
+        <source>Enabled</source>
+        <target>Activé</target>
+      </trans-unit>
+
+      <trans-unit id="admin.disabled" resname="Disabled">
+        <source>Disabled</source>
+        <target>Désactivé</target>
+      </trans-unit>
+
+      <trans-unit id="admin.show_footer" resname="Show in footer">
+        <source>Show in footer</source>
+        <target>Afficher dans le pied de page</target>
+      </trans-unit>
+
+      <trans-unit id="admin.show_checkout" resname="Show on checkout summary top">
+        <source>Show on checkout summary top</source>
+        <target>Afficher au-dessus du récapitulatif de commande</target>
+      </trans-unit>
+
+      <trans-unit id="admin.desc_checkout" resname="Displays the notice above the order summary during checkout.">
+        <source>Displays the notice above the order summary during checkout.</source>
+        <target>Affiche l’avertissement au-dessus du récapitulatif pendant le passage de commande.</target>
+      </trans-unit>
+
+      <trans-unit id="admin.cms_link" resname="CMS page for “disclaimer” link">
+        <source>CMS page for “disclaimer” link</source>
+        <target>Page CMS pour le lien « avertissement »</target>
+      </trans-unit>
+
+      <trans-unit id="admin.desc_cms" resname="If empty, the notice is shown without link. You can create the page later.">
+        <source>If empty, the notice is shown without link. You can create the page later.</source>
+        <target>Si vide, l’avertissement est affiché sans lien. Vous pourrez créer la page plus tard.</target>
+      </trans-unit>
+
+      <trans-unit id="admin.none" resname="— None —">
+        <source>— None —</source>
+        <target>— Aucune —</target>
+      </trans-unit>
+
+      <trans-unit id="admin.age_limit" resname="Age limit">
+        <source>Age limit</source>
+        <target>Âge légal</target>
+      </trans-unit>
+
+      <trans-unit id="admin.desc_age" resname="Default: 18. Used to replace {age_limit} in texts.">
+        <source>Default: 18. Used to replace {age_limit} in texts.</source>
+        <target>Par défaut : 18. Utilisé pour remplacer {age_limit} dans les textes.</target>
+      </trans-unit>
+
+      <trans-unit id="admin.footer_text" resname="Footer text (EN base)">
+        <source>Footer text (EN base)</source>
+        <target>Texte du pied de page (base EN)</target>
+      </trans-unit>
+
+      <trans-unit id="admin.checkout_text" resname="Checkout text (EN base)">
+        <source>Checkout text (EN base)</source>
+        <target>Texte du passage de commande (base EN)</target>
+      </trans-unit>
+
+      <trans-unit id="admin.save" resname="Save">
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+
+      <trans-unit id="admin.updated" resname="Settings updated">
+        <source>Settings updated</source>
+        <target>Paramètres mis à jour</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

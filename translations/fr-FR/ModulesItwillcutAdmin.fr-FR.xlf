@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" target-language="fr-FR" datatype="plaintext" original="admin">
+    <body>
+      <trans-unit id="shop.legal_age_warning" resname="Legal age warning">
+        <source>Legal age warning</source>
+        <target>Avertissement relatif à l’âge légal</target>
+      </trans-unit>
+
+      <trans-unit id="shop.read_disclaimer" resname="Read the disclaimer">
+        <source>Read the disclaimer</source>
+        <target>Lire l’avertissement légal</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
