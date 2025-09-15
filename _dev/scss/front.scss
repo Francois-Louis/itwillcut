@@ -1,0 +1,50 @@
+/* Style minimal, hérite des typos/couleurs du thème Ceramiry.
+   Respect du contraste AA sur fond neutre. Pas de position "sticky", c'est une vraie section. */
+
+.itwillcut {
+  --itw-padding-y: 0.75rem;
+  --itw-padding-x: 1rem;
+  --itw-radius: .375rem;
+  --itw-bg: #f6f7f9;
+  --itw-fg: #111;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: var(--itw-padding-y) var(--itw-padding-x);
+    border-radius: var(--itw-radius);
+    background: var(--itw-bg);
+    color: var(--itw-fg);
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    border: 2px solid currentColor;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: .95rem;
+  }
+
+  &__link {
+    margin-left: .5rem;
+    text-decoration: underline;
+  }
+
+  &--footer {
+    margin-top: 1rem;
+  }
+
+  &--checkout {
+    margin: .5rem 0 1rem;
+  }
+}

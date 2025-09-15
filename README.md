@@ -190,7 +190,7 @@ Ce module est distribué sous [Academic Free License 3.0 (AFL-3.0)](LICENSE.txt)
 
 ## 🏆 **Contributeurs**
 
-- **Atelier-Legoff** - Développement & maintenance
+- **fl-Toussaint** - Développement & maintenance
 
 ---
 
